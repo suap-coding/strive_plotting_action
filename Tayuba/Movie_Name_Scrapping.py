@@ -37,11 +37,14 @@ names_series = pd.Series(names_list, name="Movie name")
 
 names_of_genre = []
 
+
 movie_types_soup = soup.find_all(name="span", class_="genre")
 
 for idx1 in range(0, len(movie_types_soup)- 1):
-    names_of_genre.append(list(movie_types_soup[idx1])[0])
-# print(names_of_genre)
+    string = list(movie_types_soup[idx1])[0]
+    names_of_genre.append(string)
+
+# # print(names_of_genre)
 movie_types_series = pd.Series(names_of_genre, name="Genre")
 print(movie_types_series)
 
