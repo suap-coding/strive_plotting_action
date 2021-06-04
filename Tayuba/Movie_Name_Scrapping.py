@@ -33,7 +33,7 @@ for idx in range(0, len(names_soup)-1):
 # print(names_list)
 
 names_series = pd.Series(names_list, name="Movie name")
-# print(names_series)
+print(names_series)
 
 names_of_genre = []
 
