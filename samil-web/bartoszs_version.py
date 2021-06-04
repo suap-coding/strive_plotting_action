@@ -33,3 +33,4 @@ for str_date in movie_release_dates:
 rel_dated_series = pd.Series(list_rel_dates, name="Release date")
 
 # now u can print it or do whatever. :)
+print(rel_dated_series)
