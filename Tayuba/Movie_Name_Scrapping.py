@@ -62,4 +62,12 @@ for idx1 in range(0, len(movie_types_soup)):
 
 # # print(names_of_genre)
 movie_types_series = pd.Series(names_of_genre, name="Genre")
-print(movie_types_series)
+print(movie_types_series, "\n")
+
+table_movies = {
+    "Movie Name": names_list,
+    "Genre": names_of_genre
+}
+
+df = pd.DataFrame(table_movies)
+print(df)
