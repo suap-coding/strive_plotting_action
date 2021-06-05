@@ -1,6 +1,6 @@
 # strive_plotting_action
 
-Main stuff u can find in main_stuff.ipynb :]
+You can find main stuff in main_stuff.ipynb :]
 
 I'm going to pull more numerical data and start plotting.
 For now we can download over 6000 rows of info about movies with:
