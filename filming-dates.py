@@ -16,29 +16,19 @@ for response in responses:
     soups.append(BeautifulSoup(response.text, 'html.parser'))
 print("Number of soups: ", len(soups))
 
-### Filming Dates ###
 
-movie_urls = []
+# # Filming Dates ###
 
-# print(soups[0].find_all('a', href = True)[0]['href'])
-
-# For reference:
-# <a href="/title/tt0068646/?ref_=adv_li_tt">Der Pate</a>
-
-# Searching for href values containing '/title/tt' gives
-# 3 results for each movie (one for image, one for title 
-# and one for votes. Last movie has 4 results for some 
-# reason)
+# In[6]:
 
 
-for a in soups[0].find_all('a', href = True):
-    
-    if "/title/tt" in a['href']:
-        movie_urls.append(a['href'].strip('vote'))
+movie_hrefs = []
+for soup in soups:
+    movie_hrefs += soup.find_all('h3', class_='lister-item-header')
 
-# To drop duplicates
-# Order will be lost however
-movie_urls = list(set(movie_urls))
+movie_hrefs_list = []
+for mv_hrf in movie_hrefs:
+    movie_hrefs_list.append( mv_hrf.contents[3]['href'] )
 
-print(movie_urls)
-print("Number of movie urls: ", len(movie_urls))
+movie_hrefs_list
+
